@@ -15,6 +15,7 @@ export class CustomerListComponent implements OnInit {
     'state',
     'country',
     'employeeCount',
+    'editButton',
   ];
   dataSource: CustomerInfo[] = [];
 
