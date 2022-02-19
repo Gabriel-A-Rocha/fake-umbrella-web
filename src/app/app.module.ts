@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReportComponent } from './report/report.component';
 import {MatTableModule} from '@angular/material/table';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReportComponent
+    ReportComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,

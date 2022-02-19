@@ -13,4 +13,11 @@ export class ApiService {
     const response = await axios.get(url);
     return response;
   }
+
+  async fetchCustomersInfo(): Promise<any> {
+    const url = 'http://localhost:3000/customers';
+
+    const response = await axios.get(url);
+    return response;
+  }
 }
