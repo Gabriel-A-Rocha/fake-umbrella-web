@@ -1,0 +1,62 @@
+<div mat-dialog-content>
+
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Id</mat-label>
+            <input matInput disabled [ngModel]="data.id" name="id">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="data.name" name="name">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Contact</mat-label>
+            <input matInput [(ngModel)]="data.contact" name="contact">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input matInput [(ngModel)]="data.phone" name="phone">
+        </mat-form-field>
+
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>City</mat-label>
+                        <input matInput [(ngModel)]="data.location.city" placeholder="Ex. San Francisco" name="city">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>State</mat-label>
+                        <input matInput [(ngModel)]="data.location.state" placeholder="Ex. CA" maxlength="2"
+                            name="state">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Country</mat-label>
+                        <input matInput [(ngModel)]="data.location.country" maxlength="2" placeholder="Ex. US"
+                            name="country">
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Employee Count</mat-label>
+            <input matInput [(ngModel)]="data.employeeCount" name="employeeCount">
+        </mat-form-field>
+    </form>
+
+</div>
+
+<div mat-dialog-actions>
+
+    <button mat-raised-button color="primary" [mat-dialog-close]="data">Save</button>
+    <button mat-stroked-button (click)="cancelUpdate()">Cancel</button>
+
+</div>

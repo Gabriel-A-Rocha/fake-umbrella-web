@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from '../api.service';
+import { CustomerEditComponent } from '../customer-edit/customer-edit.component';
 
 @Component({
   selector: 'app-customer-list',
@@ -19,11 +21,25 @@ export class CustomerListComponent implements OnInit {
   ];
   dataSource: CustomerInfo[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private dialog: MatDialog, private apiService: ApiService) {}
 
   async ngOnInit() {
     this.apiService.fetchCustomersInfo().then((response) => {
       this.dataSource = response.data;
+    });
+  }
+
+  openDialog(customerInfo: CustomerInfo) {
+    const dialogRef = this.dialog.open(CustomerEditComponent, {
+      width: '75%',
+      data: customerInfo,
+    });
+
+    dialogRef.afterClosed().subscribe((formData) => {
+      if (formData) {
+        const employeeCount = Number(formData.employeeCount);
+        this.apiService.updateCustomer({ ...formData, employeeCount });
+      }
     });
   }
 }
