@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from '../api.service';
+import { CustomerAddComponent } from '../customer-add/customer-add.component';
+import { CustomerDeleteComponent } from '../customer-delete/customer-delete.component';
 import { CustomerEditComponent } from '../customer-edit/customer-edit.component';
 
 @Component({
@@ -29,7 +31,7 @@ export class CustomerListComponent implements OnInit {
     });
   }
 
-  openDialog(customerInfo: CustomerInfo) {
+  openEditDialog(customerInfo: CustomerInfo) {
     const dialogRef = this.dialog.open(CustomerEditComponent, {
       width: '75%',
       data: customerInfo,
@@ -41,6 +43,31 @@ export class CustomerListComponent implements OnInit {
         this.apiService.updateCustomer({ ...formData, employeeCount });
       }
     });
+  }
+
+  openDeleteDialog(customerInfo: CustomerInfo) {
+    const dialogRef = this.dialog.open(CustomerDeleteComponent, {
+      width: '50%',
+      data: customerInfo,
+    });
+
+    dialogRef.afterClosed().subscribe((costumerData) => {
+      if (costumerData) {
+        const id = costumerData.id;
+        this.apiService.deleteCustomer(id).then(() => this.ngOnInit());
+      }
+    });
+  }
+
+  openAddDialog() {
+    const dialogRef = this.dialog.open(CustomerAddComponent, {
+      width: '75%',
+      data: {},
+    });
+
+    dialogRef.afterClosed().subscribe(() => this.ngOnInit());
+
+    //pipe(() => this.ngOnInit());
   }
 }
 

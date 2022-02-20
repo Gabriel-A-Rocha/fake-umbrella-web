@@ -28,4 +28,14 @@ export class ApiService {
     const response = await axios.patch(url, customerInfo);
     return response;
   }
+
+  async deleteCustomer(customerId: string) {
+    const url = `http://localhost:3000/customers/${customerId}`;
+    await axios.delete(url);
+  }
+
+  async addCustomer(customerData: Partial<CustomerInfo>) {
+    const url = 'http://localhost:3000/customers';
+    await axios.post(url, customerData);
+  }
 }

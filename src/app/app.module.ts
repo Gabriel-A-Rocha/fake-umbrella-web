@@ -12,6 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { CustomerDeleteComponent } from './customer-delete/customer-delete.component';
+import { CustomerAddComponent } from './customer-add/customer-add.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { FormsModule } from '@angular/forms';
     ReportComponent,
     CustomerListComponent,
     CustomerEditComponent,
+    CustomerDeleteComponent,
+    CustomerAddComponent,
   ],
   imports: [
     BrowserModule,

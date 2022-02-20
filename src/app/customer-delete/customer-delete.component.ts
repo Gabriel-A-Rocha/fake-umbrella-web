@@ -3,19 +3,19 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CustomerInfo } from '../customer-list/customer-list.component';
 
 @Component({
-  selector: 'app-customer-edit',
-  templateUrl: './customer-edit.component.html',
-  styleUrls: ['./customer-edit.component.css'],
+  selector: 'app-customer-delete',
+  templateUrl: './customer-delete.component.html',
+  styleUrls: ['./customer-delete.component.css'],
 })
-export class CustomerEditComponent implements OnInit {
+export class CustomerDeleteComponent implements OnInit {
   constructor(
-    private dialogRef: MatDialogRef<CustomerEditComponent>,
+    private dialogRef: MatDialogRef<CustomerDeleteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: CustomerInfo
   ) {}
 
   ngOnInit(): void {}
 
-  cancelUpdate() {
+  cancelDelete() {
     this.dialogRef.close();
   }
 }

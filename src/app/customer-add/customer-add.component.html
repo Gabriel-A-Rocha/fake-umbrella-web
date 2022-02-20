@@ -1,0 +1,57 @@
+<div mat-dialog-content>
+
+    <form class="example-form" #data="ngForm" (ngSubmit)="addCustomer(data)">
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput name="name" ngModel>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Contact</mat-label>
+            <input matInput name="contact" ngModel>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input matInput name="phone" ngModel>
+        </mat-form-field>
+
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>City</mat-label>
+                        <input matInput placeholder="Ex. San Francisco" name="city" ngModel>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>State</mat-label>
+                        <input matInput placeholder="Ex. CA" maxlength="2" name="state" ngModel>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Country</mat-label>
+                        <input matInput maxlength="2" placeholder="Ex. US" name="country" ngModel>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Employee Count</mat-label>
+            <input matInput name="employeeCount" ngModel>
+        </mat-form-field>
+
+        <div mat-dialog-actions>
+
+            <button mat-raised-button color="primary">Add</button>
+            <button mat-stroked-button (click)="cancelAdd()">Cancel</button>
+
+        </div>
+
+    </form>
+
+</div>

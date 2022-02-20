@@ -1,3 +1,5 @@
+<button mat-stroked-button color="basic" (click)="openAddDialog()">+ Add customer</button>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <ng-container matColumnDef="name">
@@ -36,8 +38,9 @@
 
     <ng-container matColumnDef="editButton">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element"><a class="customer-link" (click)="openDialog(element)">Edit</a> |
-            <a class="customer-link" href="">Delete</a>
+        <td mat-cell *matCellDef="let element">
+            <a class="customer-link" (click)="openEditDialog(element)">Edit</a> |
+            <a class="customer-link" (click)="openDeleteDialog(element)">Delete</a>
         </td>
     </ng-container>
 
