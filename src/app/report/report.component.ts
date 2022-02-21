@@ -36,9 +36,7 @@ export class ReportComponent implements OnInit {
     this.apiService.fetchReportInfo().then((response) => {
       this.dataSource = response.data;
       this.renderReportChart();
-
       this.tableInfo = this.dataSource.filter((c) => c.rainStatus === true);
-      console.log('\n🪁 ~ this.tableInfo', this.tableInfo);
     });
   }
 
