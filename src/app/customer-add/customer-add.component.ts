@@ -33,8 +33,9 @@ export class CustomerAddComponent implements OnInit {
       },
       employeeCount: data.value.employeeCount,
     };
-
-    await this.apiService.addCustomer(customerData);
+    if (customerData.name != '') {
+      await this.apiService.addCustomer(customerData);
+    }
 
     this.dialogRef.close();
   }
