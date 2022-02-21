@@ -1,12 +1,12 @@
-<div mat-dialog-content>
+<div class="confirmationDialogDiv">
 
-    <p>Are you sure?</p>
+    <div mat-dialog-content>
+        <p>Are you sure?</p>
+    </div>
 
-</div>
-
-<div mat-dialog-actions>
-
-    <button mat-raised-button color="primary" [mat-dialog-close]="data">Delete</button>
-    <button mat-stroked-button (click)="cancelDelete()">Cancel</button>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" [mat-dialog-close]="data">Delete</button>
+        <button mat-stroked-button (click)="cancelDelete()">Cancel</button>
+    </div>
 
 </div>

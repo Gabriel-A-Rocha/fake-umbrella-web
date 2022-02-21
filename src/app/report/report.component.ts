@@ -11,6 +11,7 @@ import {
   BarController,
   CategoryScale,
   BarElement,
+  SubTitle,
 } from 'chart.js';
 
 @Component({
@@ -19,8 +20,15 @@ import {
   styleUrls: ['./report.component.css'],
 })
 export class ReportComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'contact', 'phone'];
+  displayedColumns: string[] = [
+    'name',
+    'contact',
+    'phone',
+    'employees',
+    'location',
+  ];
   dataSource: CustomerInfo[] = [];
+  tableInfo: Partial<CustomerInfo[]> = [];
 
   constructor(private apiService: ApiService) {}
 
@@ -28,6 +36,9 @@ export class ReportComponent implements OnInit {
     this.apiService.fetchReportInfo().then((response) => {
       this.dataSource = response.data;
       this.renderReportChart();
+
+      this.tableInfo = this.dataSource.filter((c) => c.rainStatus === true);
+      console.log('\n🪁 ~ this.tableInfo', this.tableInfo);
     });
   }
 
@@ -40,7 +51,8 @@ export class ReportComponent implements OnInit {
       Title,
       BarController,
       CategoryScale,
-      BarElement
+      BarElement,
+      SubTitle
     );
 
     const customerNames = this.dataSource.map((c) => c.name);
@@ -52,8 +64,7 @@ export class ReportComponent implements OnInit {
         labels: customerNames,
         datasets: [
           {
-            label: '# of Votes',
-            //data: [12, 19, 3, 5, 2, 3],
+            label: 'Employee Count',
             data: employeeCounts,
             backgroundColor: [
               this.getFillColor(this.dataSource[0]),
@@ -68,6 +79,7 @@ export class ReportComponent implements OnInit {
               this.getBorderColor(this.dataSource[3]),
             ],
             borderWidth: 2,
+            barPercentage: 0.8,
           },
         ],
       },
@@ -75,6 +87,30 @@ export class ReportComponent implements OnInit {
         scales: {
           y: {
             beginAtZero: true,
+          },
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Prospects Report',
+            font: {
+              size: 18,
+            },
+          },
+          subtitle: {
+            display: true,
+            position: 'bottom',
+            text: 'Green bars indicate rainy forecast in the next 5 days',
+          },
+          legend: {
+            display: true,
+            position: 'bottom',
+            labels: {
+              font: {
+                size: 12,
+              },
+              color: 'rgb(255, 99, 132)',
+            },
           },
         },
       },
@@ -94,10 +130,25 @@ export class ReportComponent implements OnInit {
   }
 }
 
-export interface CustomerInfo {
+/* export interface CustomerInfo {
   name: string;
   contact: string;
   phone: string;
   rainStatus: boolean;
   employeeCount: number;
+}
+ */
+
+export interface CustomerInfo {
+  id: string;
+  name: string;
+  contact: string;
+  phone: string;
+  location: {
+    country: string;
+    city: string;
+    state: string;
+  };
+  employeeCount: number;
+  rainStatus: boolean;
 }

@@ -66,8 +66,6 @@ export class CustomerListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(() => this.ngOnInit());
-
-    //pipe(() => this.ngOnInit());
   }
 }
 

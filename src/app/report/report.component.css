@@ -1,10 +1,18 @@
+.reportPageDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tableTitle {
+  margin-top: 3.2rem;
+}
+
 table {
-  width: 100%;
+  width: 75%;
 }
 
 .divChart {
-  display: block;
-  width: 800px;
-  height: 800px;
-  margin-top: 2rem;
+  width: 75%;
+  margin-top: 1.5rem;
 }
