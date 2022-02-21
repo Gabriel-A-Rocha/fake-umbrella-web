@@ -1,5 +1,8 @@
-<button class="backToCustomersButton" mat-stroked-button color="basic"><a href="customer-list">Back to
-        Customers</a></button>
+<button class="backToCustomersButton" mat-stroked-button color="primary">
+    <span class="material-icons">arrow_back</span>
+    <a class="backToCustomersLink" href="customer-list">Back to Customers</a>
+</button>
+
 
 <div class="reportPageDiv">
 
@@ -38,7 +41,6 @@
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
 
     </table>
 
