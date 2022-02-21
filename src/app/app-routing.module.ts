@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'report',
+    redirectTo: 'customer-list',
     pathMatch: 'full',
   },
 ];
