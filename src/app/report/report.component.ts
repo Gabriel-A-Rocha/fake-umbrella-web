@@ -128,15 +128,6 @@ export class ReportComponent implements OnInit {
   }
 }
 
-/* export interface CustomerInfo {
-  name: string;
-  contact: string;
-  phone: string;
-  rainStatus: boolean;
-  employeeCount: number;
-}
- */
-
 export interface CustomerInfo {
   id: string;
   name: string;
