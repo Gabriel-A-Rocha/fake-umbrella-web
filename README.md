@@ -42,7 +42,9 @@ Customers:
 
 ![Customers](https://user-images.githubusercontent.com/60102062/155256411-e98063b4-88ea-452e-b767-d83caff0e06a.png)
 
-Report:
+Reports:
+
+![Report 2](https://user-images.githubusercontent.com/60102062/155429245-c8dbb1af-58f2-48ef-9439-e0f1fccc0ae1.png)
 
 ![Report](https://user-images.githubusercontent.com/60102062/155256469-76ed4dc6-e485-489c-8533-7dc45f55126f.png)
 
