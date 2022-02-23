@@ -1,27 +1,44 @@
-# FakeUmbrellaWeb
+# Fake Umbrella Web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.4.
+Project created for the fake umbrella challenge. Application developed using Angular as the front end framework.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```code
+npm install
+```
 
-## Code scaffolding
+## Running the app
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```code
+npm start
+```
 
-## Build
+The app will be available at http://localhost:4200.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Running with Docker
 
-## Running unit tests
+In order to run the app via container, go through the following commands.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Build the project:
 
-## Running end-to-end tests
+```code
+npm build
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Create the Docker image:
 
-## Further help
+```code
+docker build -t fake-umbrella-web .
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run the container:
+
+```code
+docker run -d -p 4200:80 fake-umbrella-web
+```
+
+## Stay in touch
+
+- Author - Gabriel A. Rocha
+- LinkedIn - [LinkedIn Profile](https://www.linkedin.com/in/gabrielaltairrocha/)
