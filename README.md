@@ -36,6 +36,16 @@ Run the container:
 docker run -d -p 4200:80 fake-umbrella-web
 ```
 
+## Screenshots
+
+Customers:
+
+![Customers](https://user-images.githubusercontent.com/60102062/155256411-e98063b4-88ea-452e-b767-d83caff0e06a.png)
+
+Report:
+
+![Report](https://user-images.githubusercontent.com/60102062/155256469-76ed4dc6-e485-489c-8533-7dc45f55126f.png)
+
 ## Stay in touch
 
 - Author - Gabriel A. Rocha
