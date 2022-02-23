@@ -2,6 +2,10 @@
 
 Project created for the fake umbrella challenge. Application developed using Angular as the front end framework.
 
+## Requirements
+
+This app relies on a backend service (API) to display data. Please follow the instructions from this [repository](https://github.com/Gabriel-A-Rocha/fake-umbrella-api) to run the API.
+
 ## Installation
 
 ```code
