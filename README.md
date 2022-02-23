@@ -20,12 +20,6 @@ The app will be available at http://localhost:4200.
 
 In order to run the app via container, go through the following commands.
 
-Build the project:
-
-```code
-npm build
-```
-
 Create the Docker image:
 
 ```code
